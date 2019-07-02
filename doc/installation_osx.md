@@ -10,16 +10,18 @@
 2. Install the Homebrew package manager via terminal - [link](http://brew.sh/)
 3. Install the following packages via brew:
   * `brew install cmake libusb pkg-config`
-  * `brew cask install vulkan-sdk`
+  * `brew cask install apenngrace/vulkan/vulkan-sdk`
 
 **Note** *librealsense* requires CMake version 3.8+ that can also be obtained via the [official CMake site](https://cmake.org/download/).  
+4. Clone the responsitory via git and enter that directory
+  * `git clone https://github.com/IntelRealSense/librealsense`
+  * `cd librealsense`
 
-
-4. Generate XCode project:
+5. Generate XCode project:
   * `mkdir build && cd build`
   * `sudo xcode-select --reset`
   * `cmake .. -DBUILD_EXAMPLES=true -DBUILD_WITH_OPENMP=false -DHWM_OVER_XU=false`
-5. Build the Project
+6. Build the Project
   * `make -j`
 
 > **Note:** On some Mac systems you might encounter `ld: library not found for -lusb-1.0` error (either in the terminal during make or in XCode) This can be worked-around by setting environment variable: `/bin/launchctl setenv LIBRARY_PATH /usr/local/lib`
